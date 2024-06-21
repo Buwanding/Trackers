@@ -1,10 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import AtendeeTracker from './components/screens/AtendeeTracker';
+import InventoryTracker from './components/screens/InventoryTracker';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      {/* <AtendeeTracker/> */}
+      <InventoryTracker/>
       <StatusBar style="auto" />
     </View>
   );
