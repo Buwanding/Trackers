@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import {
   View,
   Text,
+  Image,
   TextInput,
   StyleSheet,
   ScrollView,
   TouchableOpacity,
 } from "react-native";
+
 
 const initialExpenses = [
   { category: "Food & Catering", amount: "-50,000" },
@@ -35,12 +37,20 @@ export default function BudgetTracker() {
 
   return (
     <ScrollView style={styles.container}>
+
       <View style={styles.header}>
         <Text style={styles.headerText}>
           <Text style={styles.headerHighlight}>Budget</Text> Tracker
         </Text>
       </View>
+
       <View style={styles.budgetSection}>
+      <Image
+        style={[styles.orgimage, { alignSelf: 'center' }]}
+        source={{
+          uri: '',
+        }}
+      />
         <Text style={styles.eventTitle}>Mr. & Mrs. Malik Wedding</Text>
         <View style={styles.budgetInfo}>
           <Text style={styles.budgetText}>
@@ -67,6 +77,7 @@ export default function BudgetTracker() {
           <Text style={styles.newBudgetButtonText}>Create New Budget</Text>
         </TouchableOpacity>
       </View>
+
       <View style={styles.section}>
         <View style={styles.sectionHeader}>
           <Text style={styles.sectionTitle}>Expenses</Text>
@@ -84,6 +95,7 @@ export default function BudgetTracker() {
           </View>
         ))}
       </View>
+
       <View style={styles.section}>
         <View style={styles.sectionHeader}>
           <Text style={styles.sectionTitle}>Status Overview</Text>
@@ -100,6 +112,7 @@ export default function BudgetTracker() {
           <Text style={styles.status}>Scheduled</Text>
         </View>
       </View>
+
     </ScrollView>
   );
 }
@@ -121,7 +134,7 @@ const styles = StyleSheet.create({
   headerHighlight: {
     backgroundColor: "#ff0",
     color: "#000",
-    paddingHorizontal: 5,
+    paddingHorizontal: 100,
   },
   budgetSection: {
     padding: 20,
@@ -217,5 +230,11 @@ const styles = StyleSheet.create({
     color: "#fff",
     flex: 1,
     textAlign: "right",
+  },
+    orgimage:{
+    alignItems: 'center',
+    height: 130,
+    width: 130,
+    borderRadius: 150,
   },
 });

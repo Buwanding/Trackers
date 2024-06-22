@@ -82,10 +82,14 @@ export default function AtendeeTracker() {
           <Text style={styles.details}>9:00 AM - 3:00 PM</Text>
           <Text style={styles.details}>Total Visitor: 60</Text>
         </View>
+
+{/* SCANN QR PART */}
         <TouchableOpacity style={styles.scanButton}>
           <Text style={styles.scanButtonText}>📷 Scan me!</Text>
         </TouchableOpacity>
       </View>
+
+{/* PIE CHART */}
       <View style={styles.chartContainer}>
         <PieChart
           data={data}
@@ -98,16 +102,19 @@ export default function AtendeeTracker() {
           center={[10, 10]}
           absolute
         />
+
+{/* LEGEND FOR THE MEANING OF RED, GREEN, AND YELLOW */}
         <View style={styles.legend}>
           <Text style={[styles.legendText, { color: "green" }]}>Present</Text>
           <Text style={[styles.legendText, { color: "red" }]}>Absent</Text>
           <Text style={[styles.legendText, { color: "yellow" }]}>Late</Text>
         </View>
       </View>
+
+{/* FILTER BUTTONS */}
       <View style={styles.filterContainer}>
         <TouchableOpacity
-          style={[styles.filterButton, styles.filterButtonActive]}
-        >
+          style={[styles.filterButton, styles.filterButtonActive]}>
           <Text style={styles.filterButtonText}>ALL</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.filterButton}>
@@ -120,6 +127,8 @@ export default function AtendeeTracker() {
           <Text style={styles.filterButtonText}>LATE</Text>
         </TouchableOpacity>
       </View>
+
+{/* TABLE HEADER */}
       <View style={styles.tableHeader}>
         <Text style={styles.tableHeaderText}>NAME</Text>
         <Text style={styles.tableHeaderText}>DATE & TIME</Text>
